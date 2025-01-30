@@ -6,7 +6,6 @@
 
 .about-image-wrapper {
     position: relative;
-    /* padding: 2rem; */
     animation: float 6s ease-in-out infinite;
 }
 
@@ -71,14 +70,4 @@
 
 .text-danger {
     color: #dc3545 !important;
-}
-
-@media (max-width: 768px) {
-    .about-image-wrapper {
-        padding: 1rem;
-    }
-
-    .about-content {
-        padding: 1rem;
-    }
 }

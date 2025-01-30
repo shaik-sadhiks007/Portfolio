@@ -20,7 +20,7 @@ function Dashboard() {
         <div className="row align-items-center">
           <div className="col-lg-6">
             <div className="pe-lg-5">
-              <h1 className="display-3 fw-bold lh-sm mb-4">
+              <h1 className="display-3 fw-bold lh-sm mb-4 mt-3">
                 YOUR VISION,
                 <br />
                 MY MISSION
@@ -40,9 +40,6 @@ function Dashboard() {
           <div className="col-lg-6">
             <div className="hero-image-wrapper">
               <img
-                // src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-27%20133149-7pgpOI6RicbSIw04GvpJbjso5s4jl7.png"
-                // src="./src/assets/sadhik1.png"
-
                 src="https://shaikahmadnawaz.vercel.app/me.svg"
                 alt="Professional headshot"
                 className="hero-image"

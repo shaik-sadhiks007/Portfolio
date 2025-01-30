@@ -1,30 +1,33 @@
-import React from "react"
 import "./Projects.css"
 import { Link } from "react-router-dom"
+import TrooperCruitIcon from "../assets/Troopercruit.png"
+import CarRepairIcon from "../assets/CarRepair.jpg"
+import EcommerceIcon from "../assets/ecommerce.jpg"
 
 function Projects() {
   const projects = [
     {
       title: "Employee Management System",
       description:
-        "Developed a Employee Management System using HTML5, CSS3, JavaScript, ASP.NET, C#, PostgreSQL, Razor pages",
-      image: "https://cdn-icons-png.flaticon.com/512/5651/5651475.png",
+        "Built an Employee Management System designed to efficiently manage employee records, track attendance, handle leave requests, and generate payroll reports. Razor Pages is used to create dynamic and responsive user interfaces for smooth user experience.",
+      image: TrooperCruitIcon,
       technologies: ["HTML5", "CSS3", "JavaScript", "ASP.NET", "PostgreSQL", "C#"],
       link: "/mychamp",
     },
     {
-      title: "Portfolio",
+      title: "Ecommerce Website",
       description:
-        "Explore my sleek portfolio, built with React.js and Bootstrap. Discover my skills and projects in an interactive way.",
-      image: "https://cdn-icons-png.flaticon.com/512/5651/5651475.png",
-      technologies: ["React Js"],
-      link: "#",
+        "A fully functional ecommerce website showcases dynamic product listings, a shopping cart, and a seamless checkout experience, all powered by a backend server and styled using Bootstrap.",
+      image: EcommerceIcon,
+      technologies: ["React Js", "Node Js", "Express Js", "Bootstrap"],
+      link: "https://github.com/shaik-sadhiks007/shoppingCart",
     },
     {
       title: "Car Repair Services",
-      description: "Implemented a Car Repair Services website using ReactJS.",
-      image: "https://cdn-icons-png.flaticon.com/512/5651/5651475.png",
-      technologies: ["ReactJs", "Bootstrap"],
+      description:
+        "A Car Repair Services website built for Mechanics can manage repair requests, view service details, and handle appointments, while admins have control over service management and user data. The platform features a user-friendly interface.",
+      image: CarRepairIcon,
+      technologies: ["React Js", "Bootstrap", "Redux", "JavaScript", "CSS3", "HTML5"],
       link: "https://github.com/shaik-sadhiks007/CarService_Website",
     },
   ]
@@ -38,24 +41,26 @@ function Projects() {
         <div className="row g-4">
           {projects.map((project, index) => (
             <div className="col-lg-4 col-md-6" key={index}>
-              <div className="project-card">
+              <div className="project-card d-flex flex-column">
                 <div className="project-image">
                   <img src={project.image || "/placeholder.svg"} alt={project.title} className="img-fluid" />
                 </div>
-                <div className="project-content">
-                  <div className="project-technologies">
+                <div className="project-content d-flex flex-column flex-grow-1">
+                  <div className="project-technologies mb-3">
                     {project.technologies.map((tech, techIndex) => (
                       <span key={techIndex} className="technology-tag">
                         {tech}
                       </span>
                     ))}
                   </div>
-                  <h3 className="project-title">{project.title}</h3>
-                  <p className="project-description">{project.description}</p>
+                  <div className="project-info flex-grow-1 d-flex flex-column">
+                    <h3 className="project-title">{project.title}</h3>
+                    <p className="project-description flex-grow-1">{project.description}</p>
+                  </div>
                   <Link
                     to={project.link}
                     target={project.link !== "/mychamp" ? "_blank" : undefined}
-                    className="btn btn-light w-100"
+                    className="btn btn-light w-100 mt-3"
                   >
                     View Project
                   </Link>

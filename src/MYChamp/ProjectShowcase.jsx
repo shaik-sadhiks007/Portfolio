@@ -7,15 +7,16 @@ import { PayrollSystem } from "./PayrollSystem"
 import { SalarySlip } from "./SalarySlip"
 
 function ProjectShowcase() {
-  const [activeFeature, setActiveFeature] = useState(null)
+  const [selectedFeature, setSelectedFeature] = useState(null)
 
   const features = [
     {
       id: "attendance",
       title: "Attendance Calendar",
       icon: Calendar,
+      component: AttendanceCalendar,
       description:
-        "Interactive calendar system for tracking employee attendance with automated absence marking and real-time updates. Features include attendance tracking, leave integration, and automated reporting.",
+        "Track employee attendance with real-time updates and automated absence marking.",
       details: [
         "Real-time attendance tracking",
         "Automated absence marking",
@@ -27,8 +28,9 @@ function ProjectShowcase() {
       id: "leave",
       title: "Leave Management",
       icon: Users,
+      component: LeaveManagement,
       description:
-        "Comprehensive leave management system with support for multiple leave types and approval workflows. Includes features for leave balance tracking and integration with payroll.",
+        "Manage multiple leave types, approval workflows, and leave balances.",
       details: [
         "Multiple leave type support",
         "Approval workflow system",
@@ -40,8 +42,9 @@ function ProjectShowcase() {
       id: "payroll",
       title: "Payroll System",
       icon: DollarSign,
+      component: PayrollSystem,
       description:
-        "Automated payroll processing system with tax calculations and deduction management. Streamlines the entire payroll process with accurate calculations and reporting.",
+        "Automate payroll processing, tax calculations, and deductions.",
       details: [
         "Automated salary calculations",
         "Tax and EPF deductions",
@@ -53,8 +56,9 @@ function ProjectShowcase() {
       id: "salary",
       title: "Salary Slip",
       icon: FileText,
+      component: SalarySlip,
       description:
-        "Digital salary slip generation with detailed breakdown of earnings and deductions. Provides secure access to current and historical salary information.",
+        "Generate secure digital salary slips with detailed breakdowns.",
       details: [
         "Digital slip generation",
         "Detailed payment breakdown",
@@ -64,16 +68,19 @@ function ProjectShowcase() {
     },
   ]
 
+  const handleViewClick = (feature) => {
+    setSelectedFeature(feature)
+  }
+
   return (
     <section className="project-showcase py-5">
       <div className="container">
-        <h2 className="display-2 text-center text-white mb-3">Employee Management System</h2>
+        <h2 className="display-2 text-center text-white mb-3 mt-3">Employee Management System</h2>
 
         <div className="project-intro mb-5">
           <p className="text-secondary text-center mb-4">
             A comprehensive employee management system developed using ASP.NET Core with Razor Pages. This full-stack
-            application streamlines HR processes by integrating payroll, attendance, and leave management
-            functionalities.
+            application streamlines HR processes by integrating payroll, attendance, and leave management functionalities.
           </p>
           <div className="tech-stack">
             <span className="tech-tag">ASP.NET</span>
@@ -90,9 +97,8 @@ function ProjectShowcase() {
           {features.map((feature) => (
             <div
               key={feature.id}
-              className={`feature-card ${activeFeature === feature.id ? "active" : ""}`}
-              onMouseEnter={() => setActiveFeature(feature.id)}
-              onMouseLeave={() => setActiveFeature(null)}
+              className={`feature-card ${selectedFeature?.id === feature.id ? "active" : ""}`}
+              onClick={() => handleViewClick(feature)}
             >
               <div className="feature-icon">
                 <feature.icon size={24} />
@@ -107,14 +113,17 @@ function ProjectShowcase() {
             </div>
           ))}
         </div>
-        <AttendanceCalendar />
-        <LeaveManagement />
-        <PayrollSystem />
-        <SalarySlip />
+
+        {selectedFeature && (
+          <div className="selected-feature">
+            <h3 className="text-white text-center mt-4">{selectedFeature.title}</h3>
+            <p className="text-secondary text-center">{selectedFeature.description}</p>
+            <div className="feature-component">{React.createElement(selectedFeature.component)}</div>
+          </div>
+        )}
       </div>
     </section>
   )
 }
 
 export default ProjectShowcase
-

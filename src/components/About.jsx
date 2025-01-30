@@ -1,12 +1,13 @@
-import React from "react"
-import "./About.css"
+import React from "react";
+import "./About.css";
 
 function About() {
   return (
     <section className="about-section py-5" id="about">
       <div className="container">
         <div className="row align-items-center">
-          <div className="col-lg-6 mb-4 mb-lg-0">
+          {/* Image Section */}
+          <div className="col-12 col-md-6 order-2 order-md-1 mb-4 mb-lg-0">
             <div className="about-image-wrapper">
               <div className="binary-background"></div>
               <img
@@ -16,7 +17,9 @@ function About() {
               />
             </div>
           </div>
-          <div className="col-lg-6">
+
+          {/* Text Section */}
+          <div className="col-12 col-md-6 order-1 order-md-2">
             <div className="about-content">
               <h2 className="display-2 text-white mb-4">About Me</h2>
               <div className="about-text">
@@ -45,8 +48,7 @@ function About() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default About
-
+export default About;
