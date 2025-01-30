@@ -1,0 +1,84 @@
+.about-section {
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-image-wrapper {
+    position: relative;
+    /* padding: 2rem; */
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.binary-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50%" y="50%" font-size="80" text-anchor="middle" fill="rgba(255,255,255,0.05)">10</text></svg>');
+    background-size: 60px 60px;
+    border-radius: 20px;
+    opacity: 0.1;
+    animation: slide 20s linear infinite;
+}
+
+@keyframes slide {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 1000px;
+    }
+}
+
+.about-image {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.about-text {
+    position: relative;
+}
+
+.about-text p {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.about-text p:hover {
+    transform: translateX(10px);
+    border-left: 3px solid #dc3545;
+    padding-left: 10px;
+}
+
+.text-danger {
+    color: #dc3545 !important;
+}
+
+@media (max-width: 768px) {
+    .about-image-wrapper {
+        padding: 1rem;
+    }
+
+    .about-content {
+        padding: 1rem;
+    }
+}

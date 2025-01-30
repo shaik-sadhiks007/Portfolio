@@ -1,0 +1,291 @@
+/* Common Feature Styles */
+.feature-container {
+    background: rgba(30, 30, 40, 0.95);
+    border-radius: 15px;
+    padding: 2rem;
+    min-height: 500px;
+  }
+  
+  /* Attendance Calendar Styles */
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-top: 2rem;
+  }
+  
+  .calendar-day-header {
+    text-align: center;
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+  
+  .calendar-day {
+    aspect-ratio: 1;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #fff;
+  }
+  
+  .calendar-day.present {
+    background: rgba(40, 167, 69, 0.2);
+    border-color: rgba(40, 167, 69, 0.3);
+  }
+  
+  .calendar-day.absent {
+    background: rgba(220, 53, 69, 0.2);
+    border-color: rgba(220, 53, 69, 0.3);
+  }
+  
+  .calendar-day.holiday {
+    background: rgba(255, 193, 7, 0.2);
+    border-color: rgba(255, 193, 7, 0.3);
+  }
+  
+  .status-icon {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+  }
+  
+  .attendance-summary {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .summary-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  
+  .status-dot.present {
+    background-color: #28a745;
+  }
+  .status-dot.absent {
+    background-color: #dc3545;
+  }
+  .status-dot.holiday {
+    background-color: #ffc107;
+  }
+  
+  /* Leave Management Styles */
+  .leave-balance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .leave-balance-card {
+    background: rgba(40, 40, 50, 0.95);
+    border-radius: 10px;
+    padding: 1rem;
+  }
+  
+  .balance-details {
+    margin-top: 1rem;
+  }
+  
+  .balance-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    color: #a0a0a0;
+  }
+  
+  .balance-item.remaining {
+    color: #dc3545;
+    font-weight: bold;
+  }
+  
+  .leave-requests-list {
+    display: grid;
+    gap: 1rem;
+  }
+  
+  .leave-request-card {
+    background: rgba(40, 40, 50, 0.95);
+    border-radius: 10px;
+    padding: 1rem;
+  }
+  
+  .request-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .status-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+  }
+  
+  .status-badge.approved {
+    background: rgba(40, 167, 69, 0.2);
+    color: #28a745;
+  }
+  .status-badge.rejected {
+    background: rgba(220, 53, 69, 0.2);
+    color: #dc3545;
+  }
+  .status-badge.pending {
+    background: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+  }
+  
+  /* PayrollSystem Styles */
+  .payroll-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .summary-card {
+    background: rgba(40, 40, 50, 0.95);
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .card-icon {
+    background: rgba(220, 53, 69, 0.2);
+    padding: 0.75rem;
+    border-radius: 10px;
+    color: #dc3545;
+  }
+  
+  .transactions-table {
+    background: rgba(40, 40, 50, 0.95);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .transactions-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .transactions-table th,
+  .transactions-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .transactions-table th {
+    background: rgba(30, 30, 40, 0.95);
+    color: #a0a0a0;
+  }
+  
+  /* SalarySlip Styles */
+  .salary-slip {
+    background: rgba(40, 40, 50, 0.95);
+    border-radius: 15px;
+    padding: 2rem;
+  }
+  
+  .slip-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .download-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .download-btn:hover {
+    background: #c82333;
+  }
+  
+  .employee-details {
+    margin-bottom: 2rem;
+  }
+  
+  .detail-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .detail-item label {
+    display: block;
+    color: #a0a0a0;
+    margin-bottom: 0.25rem;
+  }
+  
+  .salary-breakdown {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .breakdown-section h4 {
+    margin-bottom: 1rem;
+    color: #dc3545;
+  }
+  
+  .breakdown-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    color: #a0a0a0;
+  }
+  
+  .breakdown-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: bold;
+    color: white;
+  }
+  
+  .net-salary {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background: rgba(220, 53, 69, 0.2);
+    border-radius: 10px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #dc3545;
+  }
+  
+  

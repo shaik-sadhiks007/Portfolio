@@ -1,0 +1,96 @@
+.contact-section {
+  background-color: #000;
+  padding: 80px 0;
+}
+
+.contact-image-wrapper {
+  position: relative;
+  padding: 2rem;
+}
+
+.contact-image-wrapper img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.contact-image-wrapper:hover img {
+  transform: translateY(-5px);
+}
+
+.contact-content {
+  padding: 2rem;
+}
+
+.form-control {
+  background-color: rgba(30, 30, 40, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  background-color: rgba(40, 40, 50, 0.95);
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+  color: white;
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.contact-info-item {
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: rgba(30, 30, 40, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.contact-info-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(220, 53, 69, 0.2);
+}
+
+.btn-danger {
+  padding: 0.8rem 2rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
+}
+
+@media (max-width: 768px) {
+  .contact-content {
+    padding: 1rem;
+  }
+
+  .contact-info-item {
+    padding: 0.8rem;
+  }
+
+  .form-control {
+    padding: 0.6rem 0.8rem;
+  }
+}
+
+.github {
+  filter: invert(1);
+}
+

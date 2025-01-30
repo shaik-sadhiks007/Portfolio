@@ -1,0 +1,45 @@
+.salary-slip {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .bank-details {
+    margin: 2rem 0;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1rem;
+  }
+  
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+  }
+  
+  .salary-breakdown {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+  
+  .summary {
+    border-top: 2px solid #ddd;
+    margin-top: 2rem;
+    padding-top: 1rem;
+  }
+  
+  .total {
+    font-weight: bold;
+  }
+  
+  .net {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #198754;
+  }
+  
+  
